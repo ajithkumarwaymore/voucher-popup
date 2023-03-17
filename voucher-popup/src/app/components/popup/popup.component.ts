@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder,FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-popup',
@@ -6,5 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent {
+  isIdentified = true
+  voucherGroup!: FormGroup
+  constructor(private formBuilder: FormBuilder){}
+
+  ngOnInit(): void {
+    this.voucherGroup = this.formBuilder.group({
+      voucherId:''
+    })
+  }
 
 }
