@@ -1,1 +1,37 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    display: contents;
+}
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+button{
+    border: none;
+    background: white;
+    width: 110px;
+    border-radius: 5px;
+}
+button:hover{
+    background: rgb(182, 182, 182);
+}
+small{
+    color: red;
+}
+input{
+    position: relative;
+    width: 80%;
+    height: 35px;
+    margin-top: -10px;
+    left: 19px;
+    border: 1px solid black;
+    border-radius: 5px;
+    text-align: center;
+}
+
+    .cdk-overlay-backdrop-showing{
+        background: rgba(0,0,0,.1) !important;
+    }
+    
+.cdk-overlay-pane{
+    border:1px solid black
+}
+

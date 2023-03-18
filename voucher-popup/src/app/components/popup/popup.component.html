@@ -1,22 +1,23 @@
-<div class="container px-5">
+<div class="container mt-4">
     <div class="row">
-        <div class="d-grid gap-2 col-4 mx-auto">
+        <div class="d-grid gap-2 col-8 mx-auto">
             <div class="row">
                 <div class="d-grid gap-2 col-12 mx-auto" [formGroup]="voucherGroup">
                     <p class="text-center">Please enter your voucher id</p>
-                    <input type="text" formControlName="voucherId">
+                    <input type="text"  #voucherId required formControlName="voucherId">
+                    <small *ngIf="alert" class="text-center">Invalid voucher</small>
                 </div>
             </div>
-            <div class="row mt-3">
+            <div class="row my-3">
                 <div class="col-6">
-                    <button>Cancel</button>
+                    <button mat-dialog-close="true" class="text-center">Cancel</button>
                 </div>
                 <div *ngIf="isIdentified; else elseTemplate" class="col-6">
-                    <button> Topup</button>
+                    <button (click)="topup()"> Topup</button>
                 </div>
                 <ng-template #elseTemplate>
                     <div class="col-6">
-                        <button>Submit</button>
+                        <button (click)="topup()">Submit</button>
                     </div>
                 </ng-template>         
             </div>
